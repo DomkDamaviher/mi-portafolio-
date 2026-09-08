@@ -1,0 +1,159 @@
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: var(--fuente-texto);
+    transition: background-color var(--transicion), color var(--transicion);
+}
+
+.contenedor {
+    width: 100%;
+    max-width: var(--ancho-maximo);
+    margin: 0 auto;
+    padding: 0 var(--espaciado-md);
+}
+
+/* --- ENCABEZADO --- */
+.encabezado {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--color-primario);
+}
+
+.encabezado .contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: var(--espaciado-md);
+    padding-bottom: var(--espaciado-md);
+}
+
+.encabezado__acciones {
+    display: flex;
+    align-items: center;
+    gap: var(--espaciado-md);
+}
+
+.nav-principal {
+    display: none;
+}
+
+.nav-principal ul {
+    display: flex;
+    gap: var(--espaciado-lg);
+}
+
+/* --- PRESENTACIÓN / HERO --- */
+.presentacion {
+    padding: var(--espaciado-xl) 0;
+}
+
+.presentacion .contenedor {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: var(--espaciado-lg);
+    text-align: center;
+}
+
+.presentacion__texto {
+    max-width: 60ch;
+}
+
+/* --- SECCIONES GENERALES --- */
+section {
+    padding: var(--espaciado-xl) 0;
+}
+
+.titulo-seccion {
+    font-family: var(--fuente-titulos);
+    font-size: 1.75rem;
+    margin-bottom: var(--espaciado-lg);
+}
+
+.grupo-habilidades {
+    margin-bottom: var(--espaciado-lg);
+}
+
+.subtitulo-habilidades {
+    font-family: var(--fuente-titulos);
+    font-size: 1rem;
+    color: var(--color-texto-secundario);
+    margin-bottom: var(--espaciado-sm);
+}
+
+.lista-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espaciado-sm);
+}
+
+/* --- PROYECTOS --- */
+.grid-proyectos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espaciado-lg);
+}
+
+/* --- CONTACTO --- */
+.contacto {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaciado-lg);
+}
+
+.formulario-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaciado-md);
+    max-width: 480px;
+}
+
+.datos-contacto ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaciado-sm);
+}
+
+/* --- PIE DE PÁGINA --- */
+.pie-pagina {
+    background-color: var(--color-primario);
+    color: var(--color-texto-encabezado);
+    text-align: center;
+    padding: var(--espaciado-lg) 0;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 768px) {
+    .nav-principal {
+        display: block;
+    }
+
+    .btn-hamburguesa {
+        display: none;
+    }
+
+    .presentacion .contenedor {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .grid-proyectos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .contacto {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-proyectos {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .titulo-seccion {
+        font-size: 2.1rem;
+    }
+}

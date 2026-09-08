@@ -1,0 +1,43 @@
+:root {
+    /* Colores */
+    --color-fondo: #f5f6f8;
+    --color-superficie: #ffffff;
+    --color-primario: #14213d;
+    --color-primario-suave: #1f3157;
+    --color-acento: #1f7a5c;
+    --color-acento-hover: #17614a;
+    --color-texto: #1b1f27;
+    --color-texto-secundario: #4a5567;
+    --color-borde: #e1e4e8;
+    --color-error: #b3261e;
+    --color-exito: #1f7a5c;
+    --color-texto-encabezado: #ffffff;
+
+    /* Tipografía */
+    --fuente-titulos: 'Sora', 'Segoe UI', sans-serif;
+    --fuente-texto: 'Inter', 'Segoe UI', sans-serif;
+
+    /* Espaciado y forma */
+    --radio: 6px;
+    --espaciado-sm: 0.5rem;
+    --espaciado-md: 1rem;
+    --espaciado-lg: 2rem;
+    --espaciado-xl: 4rem;
+    --ancho-maximo: 1100px;
+
+    /* Transiciones */
+    --transicion: 0.2s ease;
+}
+
+[data-tema='oscuro'] {
+    --color-fondo: #10141c;
+    --color-superficie: #1b212c;
+    --color-primario: #0b1120;
+    --color-primario-suave: #17213a;
+    --color-acento: #2fae82;
+    --color-acento-hover: #27a072;
+    --color-texto: #e7e9ee;
+    --color-texto-secundario: #a9b0bd;
+    --color-borde: #2b3242;
+    --color-texto-encabezado: #e7e9ee;
+}

@@ -1,0 +1,259 @@
+/* --- LOGO --- */
+.logo {
+    font-family: var(--fuente-titulos);
+    font-size: 1.15rem;
+    color: var(--color-texto-encabezado);
+}
+
+/* --- NAVEGACIÓN --- */
+.nav-principal a {
+    color: var(--color-texto-encabezado);
+    font-weight: 500;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+    transition: border-color var(--transicion);
+}
+
+.nav-principal a:hover,
+.nav-principal a:focus-visible {
+    border-color: var(--color-acento);
+}
+
+/* --- SELECTOR DE TEMA CLARO/OSCURO --- */
+.btn-tema {
+    font-size: 1.1rem;
+    line-height: 1;
+    padding: var(--espaciado-sm);
+    border-radius: 50%;
+    transition: background-color var(--transicion);
+}
+
+.btn-tema:hover,
+.btn-tema:focus-visible {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- MENÚ HAMBURGUESA (móvil) --- */
+.btn-hamburguesa {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: var(--espaciado-sm);
+}
+
+.btn-hamburguesa span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: var(--color-texto-encabezado);
+    transition: transform var(--transicion), opacity var(--transicion);
+}
+
+.nav-movil {
+    display: none;
+    flex-direction: column;
+    gap: var(--espaciado-md);
+    padding: var(--espaciado-md);
+    background-color: var(--color-primario-suave);
+}
+
+.nav-movil.activo {
+    display: flex;
+}
+
+.nav-movil a {
+    color: var(--color-texto-encabezado);
+    font-weight: 500;
+}
+
+/* --- AVATAR --- */
+.avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--color-acento);
+}
+
+/* --- BOTONES --- */
+.boton {
+    display: inline-block;
+    padding: 0.65rem 1.4rem;
+    border-radius: var(--radio);
+    font-weight: 600;
+    transition: background-color var(--transicion), color var(--transicion);
+}
+
+.boton--primario {
+    background-color: var(--color-acento);
+    color: #ffffff;
+}
+
+.boton--primario:hover,
+.boton--primario:focus-visible {
+    background-color: var(--color-acento-hover);
+}
+
+.boton--secundario {
+    background-color: transparent;
+    color: var(--color-primario);
+    border: 1px solid var(--color-borde);
+}
+
+.boton--secundario:hover,
+.boton--secundario:focus-visible {
+    border-color: var(--color-acento);
+    color: var(--color-acento);
+}
+
+/* --- TARJETA DE PROYECTO --- */
+.tarjeta-proyecto {
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-left: 4px solid var(--color-acento);
+    border-radius: var(--radio);
+    padding: var(--espaciado-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaciado-sm);
+    transition: border-color var(--transicion), background-color var(--transicion);
+}
+
+.tarjeta-proyecto:hover {
+    border-color: var(--color-acento);
+}
+
+.tarjeta-proyecto__titulo {
+    font-family: var(--fuente-titulos);
+    font-size: 1.15rem;
+}
+
+.tarjeta-proyecto__descripcion {
+    color: var(--color-texto-secundario);
+    font-size: 0.95rem;
+    flex-grow: 1;
+}
+
+.tarjeta-proyecto__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espaciado-sm);
+}
+
+.tag {
+    font-family: 'Courier New', monospace;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.55rem;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    color: var(--color-texto-secundario);
+}
+
+.tag--habilidad {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.85rem;
+    background-color: var(--color-superficie);
+}
+
+.tarjeta-proyecto--pendiente {
+    border-left-color: var(--color-borde);
+    border-style: dashed;
+    opacity: 0.7;
+}
+
+.tarjeta-proyecto__enlace {
+    color: var(--color-acento);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.tarjeta-proyecto__enlace:hover {
+    text-decoration: underline;
+}
+
+/* --- FORMULARIO --- */
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.campo label {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.campo input,
+.campo textarea {
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    background-color: var(--color-superficie);
+    transition: border-color var(--transicion), background-color var(--transicion);
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: var(--color-acento);
+}
+
+.campo textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.campo__error {
+    font-size: 0.8rem;
+    color: var(--color-error);
+    min-height: 1.1em;
+}
+
+.mensaje-envio {
+    font-size: 0.9rem;
+    padding: var(--espaciado-sm);
+    border-radius: var(--radio);
+    display: none;
+}
+
+.mensaje-envio.visible {
+    display: block;
+}
+
+.mensaje-envio.exito {
+    background-color: rgba(31, 122, 92, 0.1);
+    color: var(--color-exito);
+}
+
+/* --- DATOS DE CONTACTO --- */
+.datos-contacto a {
+    color: var(--color-acento);
+    font-weight: 500;
+}
+
+.datos-contacto a:hover {
+    text-decoration: underline;
+}
+
+/* --- PIE DE PÁGINA --- */
+.pie-pagina a {
+    color: var(--color-texto-encabezado);
+}
+
+.pie-pagina a:hover {
+    color: var(--color-acento);
+}
+
+/* --- ANIMACIÓN DE ENTRADA --- */
+.presentacion__texto,
+.avatar {
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.animar-entrada .presentacion__texto,
+.animar-entrada .avatar {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}

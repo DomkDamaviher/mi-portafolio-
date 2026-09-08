@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Damaviher Castañeda | Portafolio de Ingeniería de Software</title>
+    <meta name="description" content="Portafolio profesional de Damaviher Castañeda, ingeniero en software: proyectos, tecnologías y contacto.">
+
+    <!-- Aplica el tema guardado (o el del sistema) ANTES de pintar la página -->
+    <script>
+        (function () {
+            var temaGuardado = localStorage.getItem('tema');
+            var prefiereOscuro = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var tema = temaGuardado || (prefiereOscuro ? 'oscuro' : 'claro');
+            document.documentElement.setAttribute('data-tema', tema);
+        })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Sora:wght@500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+    <!-- Encabezado y navegación -->
+    <header class="encabezado">
+        <div class="contenedor">
+            <p class="logo">Damaviher Castañeda</p>
+
+            <div class="encabezado__acciones">
+                <nav class="nav-principal" aria-label="Navegación principal">
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#habilidades">Habilidades</a></li>
+                        <li><a href="#proyectos">Proyectos</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+
+                <button id="btn-tema" class="btn-tema" aria-label="Cambiar a tema oscuro" aria-pressed="false" type="button">🌙</button>
+
+                <button class="btn-hamburguesa" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav-movil">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+
+        <nav id="nav-movil" class="nav-movil" aria-label="Navegación móvil">
+            <a href="#inicio">Inicio</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Presentación personal -->
+        <section id="inicio" class="presentacion">
+            <div class="contenedor">
+                <img
+                    class="avatar"
+                    src="assets/images/damaviher.jpg"
+                    alt="Foto de Damaviher Castañeda"
+                    width="140"
+                    height="140"
+                >
+                <div class="presentacion__texto">
+                    <h1>Damaviher Castañeda</h1>
+                    <p>Ingeniero en software</p>
+                    <p>Curioso y colaborativo en mi entorno de trabajo. Me interesa construir interfaces claras y aprender constantemente sobre desarrollo web.</p>
+                    <a class="boton boton--primario" href="#contacto">Contáctame</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Habilidades -->
+        <section id="habilidades">
+            <div class="contenedor">
+                <h2 class="titulo-seccion">Habilidades</h2>
+
+                <div class="grupo-habilidades">
+                    <h3 class="subtitulo-habilidades">Cómo trabajo</h3>
+                    <div class="lista-tags">
+                        <span class="tag tag--habilidad">Colaborativo</span>
+                        <span class="tag tag--habilidad">Muy activo</span>
+                        <span class="tag tag--habilidad">Curioso</span>
+                    </div>
+                </div>
+
+                <div class="grupo-habilidades">
+                    <h3 class="subtitulo-habilidades">Tecnologías</h3>
+                    <div class="lista-tags">
+                        <span class="tag tag--habilidad">HTML5</span>
+                        <span class="tag tag--habilidad">CSS3</span>
+                        <span class="tag tag--habilidad">JavaScript</span>
+                        <span class="tag tag--habilidad">Python</span>
+                        <span class="tag tag--habilidad">Node.js</span>
+                        <span class="tag tag--habilidad">Git y GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proyectos -->
+        <section id="proyectos">
+            <div class="contenedor">
+                <h2 class="titulo-seccion">Proyectos</h2>
+                <div id="proyectos-grid" class="grid-proyectos">
+                    <!-- Las tarjetas de proyecto se generan por JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section id="contacto">
+            <div class="contenedor contacto">
+                <form id="formulario-contacto" class="formulario-contacto" novalidate>
+                    <h2 class="titulo-seccion">Escríbeme</h2>
+
+                    <div class="campo">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                        <span class="campo__error" role="alert"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" id="correo" name="correo" placeholder="tu@correo.com" required>
+                        <span class="campo__error" role="alert"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" placeholder="Cuéntame en qué puedo ayudarte" required></textarea>
+                        <span class="campo__error" role="alert"></span>
+                    </div>
+
+                    <button type="submit" class="boton boton--primario">Enviar mensaje</button>
+                    <p id="mensaje-envio" class="mensaje-envio" role="status"></p>
+                </form>
+
+                <div class="datos-contacto">
+                    <h2 class="titulo-seccion">Datos de contacto</h2>
+                    <ul>
+                        <li><a href="mailto:estradadominik562@gmail.com">estradadominik562@gmail.com</a></li>
+                        <li><a href="tel:+573505059041">+57 350 505 9041</a></li>
+                        <li><a href="https://github.com/DomkDamaviher" target="_blank" rel="noopener noreferrer">github.com/DomkDamaviher</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="pie-pagina">
+        <p>&copy; <span id="anio-actual"></span> Damaviher Castañeda. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/tema.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/form-handler.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>
